@@ -11,3 +11,10 @@
   }
 
   */
+  body { 
+    margin: 0 auto;
+    max-width: 1000px;
+    line-height: 42px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
