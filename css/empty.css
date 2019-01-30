@@ -19,12 +19,12 @@
     color: black;
 }
 
- .summary {
+ ul li.summary {
   list-style-type: none;
   margin-left: -14px;
 }
 
- #click {
+ ul #click {
   list-style-type: none;
   margin-left: -40px;
  }
