@@ -1,0 +1,19 @@
+
+{
+   "editor.fontFamily": "Fira Code",
+
+   "editor.fontLigatures": true,
+   "editor.fontSize": 16,
+   "terminal.integrated.fontFamily": "Fira Code",
+   "markdown.preview.fontFamily": "Fira Code",
+   "window.autoDetectHighContrast": false,
+   "files.defaultLanguage": "en-US",
+   "files.trimTrailingWhitespace": true,
+   "workbench.commandPalette.preserveInput": true,
+   "workbench.quickOpen.preserveInput": true,
+   "workbench.view.alwaysShowHeaderActions": true,
+   "workbench.tree.horizontalScrolling": true,
+   "workbench.editor.openPositioning": "last"
+}
+
+ 
