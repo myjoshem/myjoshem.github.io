@@ -11,20 +11,8 @@
   }
 
   */
-body {
-  margin: 0 auto;
-  max-width: 1000px;
-  line-height: 42px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  color: black;
-}
-
-ul li.summary {
-  list-style-type: none;
-  margin-left: -14px;
-}
-
-ul #click {
-  list-style-type: none;
-  margin-left: -40px;
+.hero-banner {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
 }
