@@ -20,14 +20,14 @@ header {
 }
 
 .logo {
-  width: 125px;
+  width: 15%;
   /* width: 8vw; */
 }
 
 /* div contains title and motto together */
 .header-title-text {
   margin-left: 20px;
-  font-size: 1.1em;
+  font-size: .9rem;
   /*font-size: 1.8vw;*/
 }
 
@@ -54,11 +54,12 @@ nav.menu {
 }
 
 .menu a {
-  display: block;
-  width: 100%;
+  display: inline-block;
   height: 100%;
+  width: 100%;
   color: white;
-  font-size: 1.5em;
+  text-align: center;
+  font-size: 1em;
   padding: .5em 0;
   border: 1px solid rgb(27, 10, 27);
   background: rgb(56, 112, 185);
@@ -74,12 +75,74 @@ nav.menu {
   background: rgb(24, 88, 74);
 }
 
+h1.title-section {
+  margin: 1em auto .2em;
+  /* text-align: center; */
+  text-shadow: 2px .5px rgb(18, 54, 121);
+
+}
+
 .hero-banner img {
-  max-width: 100%;
   width: 100%;
   height: auto;
   box-shadow: 5px 10px 18px #888888;
   margin-top: 10px;
   border-radius: 5px 5px 5px 5px;
 }
+
+/*--- media queries ---*/
+
+@media only screen and (min-width: 600px) {
+  .menu ul {
+    margin: 0;
+    line-height: 3em;
+    box-shadow: none;
+    background: rgb(56, 112, 185);
+    display: inline-block;
+  }
+
+  .menu li {
+    display: inline-block;
+    box-shadow: none;
+    padding-inline-start: 0px;
+  }
+
+  .menu a {
+    display: inline-block;
+    font-size: .8em;
+    padding: 0 .5em;
+    background: none;
+    border: 0;
+    border-radius: 0 0 0 0;
+  }
+
+  nav {
+    background: rgb(56, 112, 185);
+  }
+
+  header {
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .menu li:first-child { display:none;}
+}
+
+@media only screen and (min-width: 745px) {
+  .menu a {
+    font-size: 1em;
+  }
+  .logo {
+    width: 12%;
+  }
+  .header-title-text {
+    font-size: 1rem;
+  }
+  header {
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+}
+
 
