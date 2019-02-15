@@ -1,0 +1,55 @@
+/*--- media queries ---*/
+
+@media only screen and (min-width: 600px) {
+  .menu ul {
+    margin: 0;
+    line-height: 3em;
+    box-shadow: none;
+    background: rgb(56, 112, 185);
+    display: inline-block;
+  }
+
+  .menu li {
+    display: inline-block;
+    box-shadow: none;
+  }
+
+  .menu a {
+    display: inline-block;
+    font-size: .8em;
+    padding: 0 .5em;
+    background: none;
+    border: 0;
+    border-radius: 0 0 0 0;
+  }
+
+  nav {
+    background: rgb(56, 112, 185);
+  }
+
+  header {
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .menu li:first-child { display:none;}
+}
+
+@media only screen and (min-width: 745px) {
+  .menu a {
+    font-size: 1em;
+  }
+  .logo {
+    width: 12%;
+  }
+  .header-title-text {
+    font-size: 1rem;
+  }
+  header {
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+}
+
+
