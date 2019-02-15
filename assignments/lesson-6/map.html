@@ -24,13 +24,27 @@
           background-color :blue;
         }
         </style>
-          <script src="js/map.js"></script>
-          <script async defer src="https://maps.googleapis/maps/api/js?key=AIzaSyD2G7MgBfRZR1tTKSwmao4m40Vv0dCYWWY&callback=initMap" type="text/javascript"></script>
+
+
 
     </head>
   <body>
    <div id="map"></div>
-
+    <script>
+    var map;
+    function initMap() {
+      var location = {lat: 42.274350, lng: -111.755800};
+      var map = new google.maps.Map(document.getElementById("map"),
+      {zoom: 8,
+      center: location
+      });
+      var marker = new google.maps.Marker({
+     position: location,
+     map: map
+   });
+}
+    </script>
+              <script async defer src="https://maps.googleapis/maps/api/js?key=AIzaSyD2G7MgBfRZR1tTKSwmao4m40Vv0dCYWWY&callback=initMap" type="text/javascript"></script>
     <script src="js/currentdate.js"></script>
     <script src="js/hamburger.js"></script>
   </body>
