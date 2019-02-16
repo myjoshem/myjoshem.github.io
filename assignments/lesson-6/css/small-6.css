@@ -1,0 +1,293 @@
+* body, header, footer, main, h1, h2, nav {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: Merriweather, Oswald,
+   Raleway, sans-serif;
+   text-align: center;
+   font-size: 2vw;
+}
+
+main {
+  max-width: 85%;
+}
+
+header, footer{
+  background-color: rgb(156, 204, 250);
+}
+
+footer {
+  -webkit-box-shadow: -13px 4px 24px 7px rgba(0,0,0,0.69);
+  box-shadow: -13px 4px 24px 7px rgba(0,0,0,0.69);
+}
+
+/*------- Header: Title and Logo -------*/
+
+.logo, .header-title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-title-text {
+  margin-left: 20px;
+}
+
+/*------- Header: Navigation -------*/
+
+nav, .menu {
+  background: rgb(56, 112, 185);
+  list-style: none;
+  text-align: center;
+  box-shadow: 5px 10px 18px #888888;
+  padding: 0;
+}
+
+.menu a, #footend-copy {
+  display: block;
+  color: white;
+  border: 1px solid rgb(27, 10, 27);
+  background: rgb(56, 112, 185);
+  border-radius: 5px 5px 5px 5px;
+  text-decoration: none;
+  line-height: 2em;
+  padding: .5rem;
+}
+
+/*------- active text and link styling -------*/
+
+.menu a.active {
+  background-color: rgb(24, 88, 74);
+}
+
+.menu a:hover {
+  background: rgb(24, 88, 74);
+}
+
+#footend-copy a:link, #footend-copy a:visited {
+  color: white;
+}
+
+/*------- Graphics -------*/
+
+.logo {
+  width: 14%;
+  /* width: 8vw; */
+}
+
+
+
+/*------- Font Adjustments, Styling -------*/
+.title-header {
+  color:  rgb(24, 88, 74);
+  font-size: 200%;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+.motto {
+  font-style: oblique;
+  font-weight: 700;
+  color:  rgb(24, 88, 74);
+  font-size: 140%;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+.menu a {
+  font-size: 130%;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+#title-town, .article-title {
+  font-size: 175%;
+  margin: 1.2em 0 .7em 0;
+  font-weight: bold;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+.img-overlay {
+  color: #fff;
+  font-size: 115%;
+}
+
+ .container-section h2 {
+  font-size: 150%;
+  text-align: center;
+  text-shadow: 3px 3px 2px #0a0909;
+}
+
+ h3 {
+  font-size: 115%;
+  text-align: left;
+}
+
+.contact address pre {
+  font-size: 130%;
+  text-align: left;
+}
+
+#footend-copy {
+  font-size: 80%;
+}
+
+/*------- Hero Container and Image -------*/
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px auto;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 5px 5px 5px 5px;
+}
+
+/*------- Weather Summary -------*/
+
+.container-hero {
+  position: relative;
+ }
+
+.img-overlay form {
+  position: absolute;
+  top: 8vw;
+  left: 1.5vw;
+  margin: 0 auto;
+  padding: .75em;
+  background-color: rgba(13, 78, 53, 0.6);
+
+}
+
+.img-overlay h3 {
+  margin: 0 0 .8em auto;
+  border-bottom: 1px solid #fff;
+}
+
+.img-overlay form label {
+  float: left;
+  width: 8em;
+  margin-right: .8em;
+  padding-bottom: .5em;
+  text-align: right;
+}
+
+.img-overlay form input {
+  width: 4.5em;
+  background-color: transparent;
+  padding-bottom: .5em;
+  padding-right: .25em;
+  border: none;
+  color: inherit;
+}
+
+/*------- Forecast -------*/
+.container-section {
+  display: none;
+  background-color: rgb(56, 112, 185);
+  margin: 2em 0 .7em 0;
+  padding: .6em;
+  box-shadow: 5px 10px 18px #0a0909;
+  border-radius: 5px 5px 5px 5px;
+  color: #fff;
+  align-content: center;
+}
+
+.forecast table {
+  margin: .5em auto;
+  padding-top: .5em;
+  background-color: #fff;
+  box-shadow: 5px 10px 18px #0a0909;
+  border-radius: 5px 5px 5px 5px;
+
+}
+
+.forecast table th {
+  font-size: 115%;
+  color: rgb(56, 112, 185);
+}
+.forecast table td {
+  padding: .5em;
+  font-size: 115%;
+  background-color: rgb(56, 112, 185);
+  border: 2px solid #0a0909;
+}
+
+/*------- Article -------*/
+article {
+  position: relative;
+  background-color: rgb(156, 204, 250);
+  margin: 2em 0 8vw 0;
+  padding: .6em;
+  box-shadow: 5px 10px 18px #0a0909;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.article-title {
+  text-align: left;
+  margin: 0;
+
+}
+
+.article-subtitle {
+  text-align: left;
+  margin-left: .8em;
+  margin-top: .25em;
+}
+
+article p.article-body {
+  float: left;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 1vw;
+  width: 45%;
+  height: 100%;
+
+}
+
+article .article-image {
+  float: right;
+  position: absolute;
+  margin: 0 auto;
+  max-width: 50%;
+  min-width: 30%;
+  max-height: 100%;
+  top: 5vw;
+  right: 1vw;
+  box-shadow: 5px 10px 18px #0a0909;
+  border-radius: 5px 5px 5px 5px;
+
+}
+
+/*------- Footer-Contact -------*/
+.container-contact {
+  margin: 5em 0 1.7em 0;
+  padding: 1em;
+
+}
+
+.contact address pre {
+  width: 50vw;
+  float: left;
+}
+
+/*------- Map Iframe -------*/
+
+.resp-container-iframe {
+  position: relative;
+  overflow: hidden;
+  padding: 28vw 0 0 0;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 18px 5px #0a0909;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: .1vw;
+  right: .1vw;
+  width: 100%;
+  height: 200px;
+}
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

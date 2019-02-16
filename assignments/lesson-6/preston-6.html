@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
-  <meta name="title" content ="Weather and Community Resource Information for Southeastern, Idaho">
+  <meta name="title" content="Weather and Community Resource Information for Southeastern, Idaho">
   <title>My Wether | Today's weather and resources | Preston, ID</title>
   <link rel="icon" href="images/sunshine.ico" type="image/x-icon" />
   <meta name="Weather and Community Resource Information for Southeastern, Idaho" content="Preston Idaho and surrounding communities of Soda Springs, Fish Haven, weather resources and Information, forecast, community events, photo gallery, storm center, calendar, emergency preparedness, articles, location.">
   <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
   <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
-          <!-- minimized version of normalize.css from external source -->
-<link href="https://fonts.googleapis.com/css?family=Merriweather%7cOswald%7cRaleway" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-          <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-<link rel="stylesheet" href="css/small-5.css" />
-<link rel="stylesheet" href="css/large-5.css" />
+  <!-- minimized version of normalize.css from external source -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather%7cOswald%7cRaleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="stylesheet" href="css/small-6.css" />
+  <link rel="stylesheet" href="css/large-6.css" />
 </head>
 
 <body>
@@ -24,8 +25,9 @@
       <div class="motto">&#x22;Because weather happens...&#x22;
       </div>
     </div>
-    <nav class="menu">
-      <ul>
+    <div class="header-object"></div>
+    <nav>
+      <ul class="menu">
         <li><a href="">Menu</a></li>
         <li><a href="">Home</a></li>
         <li><a href="#" class="active">Preston</a></li>
@@ -37,34 +39,92 @@
     </nav>
   </header>
   <main>
-    <div class="hero-banner">
-      <h1 class="title-section">Preston, ID</h1>
+
+    <section class="container-hero">
+      <h1 id="title-town">Preston, ID</h1>
+      <div class="hero-banner">
         <img src="images/edu-lauton-71055-unsplashcropped1280x649.jpg" alt="satellite view of land">
-    </div>
-    <div class="modal-mobile" id="weather-summary">
-      <h3>Weather Summary</h3>
-      <p class="weather-summary"></p>
-    </div>
-    <article>
+      </div>
+      <div class="img-overlay">
+
+        <form action="#">
+          <h3>Weather Summary</h3>
+          <label for="current-conditions">Currently:</label>
+          <input type="text" id="current-conditions" name="current-conditions" value="Sunny"><br>
+
+          <label for="current-temp">Temperature:</label>
+          <input type="text" id="temp" name="current-temp" value="70&#8457;"><br>
+
+          <label for="humidity">Humidity:</label>
+          <input type="text" id="humidity" name="humidity" value="12&#37;"><br>
+
+          <label for="precipitation">Precipitation:</label>
+          <input type="text" id="precipitation" name="precipitation" value="0 inches"><br>
+
+          <label for="wind-speed">Wind Speed:</label>
+          <input type="text" id="wind-speed" name="wind-speed" value="105 mph"><br>
+        </form>
+      </div>
+    </section>
+    <section class="container-section">
+      <h2>5-Day Forecast</h2>
+      <div class="forecast">
+        <table>
+          <tr>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+          <tr>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+          </tr>
+
+        </table>
+
+      </div>
+    </section>
+    <article class="clearfix">
       <h2 class="article-title">Article Title</h2>
       <h3 class="article-subtitle">by Author</h3>
-      <p class="article-body">Lots of things to say, lorem ipsum and such
+      <p class="article-body">Lots of things to say, lorem ipsum and suchLots of things to say, lorem ipsum and suchLots of things to say, lorem ipsum and suchsay, lorem ipsum and suchLots of things to say, lorem ipsum and suchsay, lorem ipsum and suchLots of
       </p>
-      <figure class="article-image">
-          <img src="https://placeholder.pics/svg/300x250/96B0F4-1CB48E" alt="spectacular photo">
-          <figcaption>Fig1. Read the article and you will know what this is</figcaption>
-      </figure>
+        <img class="article-image" src="images/swingHD300x200.jpg" alt="spectacular photo">
     </article>
-    <aside class="contact">
-      <p>If you don't find what you are looking for you can track me down and persuade me put it on the site.
-      </p>
-      <figure class="map"> <img alt="" width="300" id="lazyload_1878552153_23" height="190" src="https://trip-raster.citymaps.io/staticmap?scale=2&amp;zoom=14&amp;size=300x190&amp;language=en&amp;center=37.176369,-113.298843&amp;markers=icon:http%3A%2F%2Fc1.tacdn.com%2Fimg2%2Fmaps%2Ficons%2Fpin_v2_CurrentCenter.png%7c37.17637,-113.29884"></figure>
-    </aside>
-  <footer>
-      <p>&copy; 2019 | Michelle J. Markham | Utah-USA | <a href="https://www.byui.edu" target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" target="_blank" rel="help">Attribution</a></p>
-      <p><a href="map.html" target="_blank" rel="show map">Link to Map</a></p>
-  </footer>
   </main>
+  <footer>
+    <div class="container-contact">
+      <div class="contact">
+        <address>
+          <pre>
+            name of company
+            address of company
+            city, state, zip
+            phone
+            fax number
+            website
+            email informato
+          </pre>
+        </address>
+      </div>
+      <div class="resp-container-iframe">
+      <iframe class="resp-iframe" id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189463.07935818416!2d-111.880325!3d42.099747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f78c7cda6c31%3A0xf1b3b4fc465a4a3f!2sPreston%2C+ID+83263!5e0!3m2!1sen!2sus!4v1550281773667"
+       frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+    </div>
+    <p id="footend-copy">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
+        target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" title="opens text document with attribution information in new tab"
+        target="_blank" rel="help">Attributions</a><br><span id="currentdate"></span></p>
+  </footer>
+
+  <script src="js/currentdate.js"></script>
+  <script src="js/hamburger.js"></script>
 
 </body>
 
