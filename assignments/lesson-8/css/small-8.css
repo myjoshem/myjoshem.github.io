@@ -394,7 +394,7 @@ footer p.copyright {
   grid-gap: 15px;
   margin: 0 auto;
   box-shadow: none;
-  background-color: none;
+  background-color: transparent;
 }
 
 .grid-container.gallery > * {
