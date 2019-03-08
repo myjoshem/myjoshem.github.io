@@ -393,7 +393,8 @@ footer p.copyright {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 15px;
   margin: 0 auto;
-  background-color: purple;
+  box-shadow: none;
+  background-color: none;
 }
 
 .grid-container.gallery > * {
@@ -417,12 +418,3 @@ img.gallery {
   padding: 20px 20px 10px;
   align-self: center;
 }
-
-.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: .5px  5px 10px 5px rgba(0, 0, 0, 0.4), .5px 5px 10px 5px rgba(0, 0, 0, 0.4);
-};
-
