@@ -1,0 +1,319 @@
+https://css-tricks.com/snippets/css/complete-guide-grid/
+
+Watch: Wesbos : #17 CSS Grid Alignment + Centering
+Watch: Wesbos : #19 Nesting Grid with Album Layout
+
+/*---- make note of unusual, or unexpected behaviors with some Grid properties ----*/
+
+CRAZY/ BUGGY STUFF:
+
+>>>SHRINK/STRETCH - sizes to content
+Default is 'stretch' for *-items/\*-self/\*content : SO, if you use any of these properties [and declare any value other than stretch], your content will shrink wrap [will fill cell according to actual content]
+
+>>>NESTED GRIDS: solve content alignment issues within grid-item cells. Make grid-item into a grid-container too, so it's children can become grid-items.
+TIP: USE THIS IN GRID-ITEM TO PERFECTLY CENTER, or otherwise align child elements inside the grid-item CELL [NESTING GRIDS] Use another wrapper for content inside Grid cell, ie. grid-item:[ children=image, div>(make div a nested grid)[now these children of div are now grid-items > p,p,p] ]
+.item {
+    display: grid; [You do not have to specify grid-template*, but you can, for instance, to have two child elements side by side, or in one column, use as needed]
+   
+    justify-content: center;
+    align-items: center;
+}
+
+>>>Images spilling over onto siblings or out of it's cell boundaries [chrome], or cell seems too large for content, but you cannot see what is causing extra empty space [Firefox]:
+Well, if your grid-item is an image that has an original size that is larger than it's cell, Firefox adjusts the image size, but not the cell --- Chrome let's the image spill over. To fix this:
+
+.item {
+    width: 100%; [forces image to fit to width of it's cell, height is applied automatically with according to ratio;]
+}
+
+>>>One row with several buttons on the end.  
+So, if you create grid-template-columns: 1fr; You have created only one column, and the parent element that contains the first part of your (desired) row has been set as a grid-container, but the child items get thrown into their own rows as the browser creates 'implicit' cells to accomodate them, because grid-auto-flow defaults to row, but if you declare grid-auto-flow: column; it will put the child items into new columns.
+
+
+/*--------- Summary, kinda, Grid Properties -------*/
+
+align = 'vertical or column'
+justify = 'horizontal or row'
+
+item = declared on grid item [determine if it will be global attribute, all grid-items, or singular item... singular item would have a specific id or class]
+]
+
+container = declared on grid container class [parent] and applies to all grid-items [children], but not necessarily to GRANDCHILDREN...except with regards to grid specific properties
+
+<<<<ALIGN CONTENTS OF GRID-ITEM CELLS<<<<
+Effect: alignment of grid-item cell contents
+Values: end,center,stretch(default);
+Use: use both justify and align together
+
+<(container) justify-items: value
+<(container) align-items: value
+<(container)(shorthand) place-items: align-items/justify-items;
+<(item) justify-self: overrides parent or defaults on single item
+<(item) align-self; ""
+<(item)(shorthand) place-self; ""
+
+
+
+<<<PATTERN SET FOR 'IMPLICITLY' CREATED 'ROWS OR COLUMNS'<<<
+-- safe to use for all set-up, mimmick '*template* settings for consistency'
+Values: same as '*-template_*'
+
+<(container) grid-auto-rows [firefox may not allow more than one value, but Chrome lets you use same as '*-template_*']
+<(container) grid-auto-columns;
+
+
+
+<<<POSITION [smaller] ENTIRE GRID - INSIDE THE [larger] CONTAINER
+--- helps when your container is larger than Grid itself. This helps position it within the space.
+--- Values: start, end, center, stretch, space-around/between/evenly [partial space at ends and equal between, or no space at ends with equal amounts between, or equal space in between AND on the ends]
+
+<(container) justify-content: value
+<(container) align-content: value
+<(container)(shorthand) place-content: align-content/justify-content;
+
+
+<<<Placement of grid-items that exist, but have not explicity placed using grid-template-areas [declared on container and named in grid-area on items, or otherwise place]
+default to row, but must declare if you want to use COLUMNS
+>>>grid-auto-flow: row (DEFAULT) | column | row dense | column dense
+
+<<<GRID shorthand --- read specifics in details below, includes examples;
+---values:  sets all of the following properties in a single declaration: 
+grid-template-rows, [use all three, template-rows, columns, areas, together; or any alone]
+ grid-template-columns,
+  grid-template-areas, [line names too, use a '.' period to skip area... great for use with media queries]
+   grid-auto-rows,
+    grid-auto-columns,
+     grid-auto-flow
+(Note: You can only specify the explicit or the implicit grid properties in a single grid declaration).
+
+>>>ITEM, explicit placement of items in Grid [start row/col, end row/col, span]-
+--Values: line number or name, span <number> or <name> [spans specified number of tracks or until it reaches the specified <named line>], auto [default or automatic span of one track]
+
+>>>grid-column-start
+>>>grid-column-end
+>>>grid-row-start
+>>>grid-row-end
+(shorthand)grid-column: 'start/end'; [using same values in any combo]
+(shorthand)grid-row: 'start/end';
+(shorter) grid-area: 'area name' [declared in Container grid-template-areas] 
+OR 
+2) Placement (alternative to grid-column and grid-row)
+  .item-d {
+    grid-area: 1 / col4-start / last-line / 6
+  }
+
+  <<<auto-fill will fit as many that will fit in window based on size specified, but will end when you run out of content.
+  EXAMPLE:
+  grid-template-columns: repeat(auto-fill, 150px); 
+  [does not implicity add empty columns
+  <<< auto-fit will create as many additional 'implicit' columns that the screen can fit, and you can place/move an item into one of those empty cells (skipping some in between, depending on browser window)]
+NOTE: If you use fr units and minmax(), rather than fixed pixel sizes ONLY - behavior changes a bit.
+EXAMPLE:
+grid-template-columns: repeat(auto-fill or autofit, minmax(150px, 1fr);
+<<<auto-fill WILL keep items at 150px and add empty cells to fill screen.
+<<auto-fit will actually stretch the existing items to fill screen. So, if the screen is bigger than Number of cells * minimum width (150px in this case), they will grow.
+
+<<<fit-content
+grid-template-columns: fit-content(100px[this is max row height?]), 150px, 150px; It works a bit like 'auto', but add's some control.
+
+
+/*------ All About Grid Properties ----*/
+
+Justify and Align do not change places, but are the same for both row and
+columns, unlike Flexbox where they switch.
+
+>>>>>>justify = row; [right to left, horizontally, inline row axis]
+
+>>>>>>align = column; [top to bottom, vertically], block column axis]
+
+
+/*------ Container properties [grid parent] ------*/
+/*------ individual cell alignment [content inside cells], all items [children]------*/
+/*------ see also ITEM properties = justify|align|place-self ------*/
+
+THESE APPLY TO ALL ITEMS, OR INDIVIDUAL ITEMS WITH REGARDS TO PLACEMENT OF WITHIN A GRID CELL
+CONTAINER PROPERTY [ALL ITEMS]
+Applies to all grid items in container [children of container]
+
+>>>justify-items: start [flush with start edge of cell row]
+                end: [flush with end of cell row]
+                center: [center of cell]
+                stretch: [fills whole width of cell] - default
+>>>align-items: [same values as justify, but are applied vertically]
+
+SHORTHAND:
+>>>place-items: align-items / justify-items; [shorthand, if only single value provided, it applies to both]
+
+/*------ Container properties [grid parent] ------*/
+/*------ set these for all to plan ahead for new items, for consistency ------*/
+YOU CAN SET THESE WITH THE FORMAT SIMILAR TO '-'TEMPLATE'-', BUT THESE VALUES AND PATTERNS WILL BE APPLIED TO 'IMPLICITY' CREATED ROWS [ONES CREATED TO ACCOMODATE OVERFLOW, AUTOMATICALLY]... YOU MIGHT WISH TO DECLARE THESE AS BACKUP SO OVERFLOW HAS SAME FORMATTING AS THE 'EXPLICITY' CREATED ROWS/COLUMNS.
+>>>grid-auto-columns
+>>>grid-auto-rows
+
+/*------ Container properties [grid parent] ------*/
+/*------ Placement/position of ENTIRE GRID inside the Container [grid parent]------*/
+THESE APPLY TO THE 'GROUP OF CELLS, OR GRID' AND ITS >>>PLACEMENT INSIDE THE GRID CONTAINER<<<<< ITSELF
+Container properties. 
+Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the inline (row) axis (as opposed to align-content which aligns the grid along the block (column) axis).
+
+>>>justify-content: start, end, center, stretch, space around [even amount of space between, with half sized spaces on each end], space-between [same, but no space on ends], space-evenly [ same as around, except the spacing is equally dispersed, even on the ends]
+
+>>>align-content: same, but applies vertically
+
+SHORTHAND:
+>>>place-content: align-content / justify-content; [shorthand, if only single value provided, it applies to both]
+
+
+/*------ Container properties [grid parent] ------*/
+/*------ defaults to row, but if you want unplaced items to be placed in a column, you need to set this------*/
+TELLS SYSTEM WHETHER TO USE ROWS OR COLUMNS TO PLACE EXISTING ITEMS [EXPLICITY CREATED, BUT NOT PLACED INTO GRID]
+>>>grid-auto-flow: row (DEFAULT) | column | row dense | column dense
+dense will fill in holes with smaller grid items, even if they will be positioned out of order [not good for accessibility]
+
+/*------ Container properties [grid parent] ------*/
+/*------ Shorthand for all GRID container properties ------*/
+>>>grid
+A shorthand for setting all of the following properties in a single declaration: grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and grid-auto-flow (Note: You can only specify the explicit or the implicit grid properties in a single grid declaration).
+
+Values:
+
+ >>>none - sets all sub-properties to their initial values.
+
+ >>><grid-template> - works the same as the grid-template shorthand.
+
+ >>><grid-template-rows> / [ auto-flow && dense? ] <grid-auto-columns>? 
+ - sets grid-template-rows to the specified value. If the auto-flow keyword is to the right of the slash, it sets grid-auto-flow to column. If the dense keyword is specified additionally, the auto-placement algorithm uses a “dense” packing algorithm. If grid-auto-columns is omitted, it is set to auto.
+ 
+ >>>[ auto-flow && dense? ] <grid-auto-rows>? / <grid-template-columns> 
+ - sets grid-template-columns to the specified value. If the auto-flow keyword is to the left of the slash, it sets grid-auto-flow to row. If the dense keyword is specified additionally, the auto-placement algorithm uses a “dense” packing algorithm. If grid-auto-rows is omitted, it is set to auto.
+
+ The following pairs of code blocks are equivalent, the first is shorthand, the second is longer equivalent declaration.
+ 
+ .container {
+    grid: 100px 300px / 3fr 1fr;
+  }
+  .container {
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .container {
+    grid: auto-flow / 200px 1fr;
+  }
+  .container {
+    grid-auto-flow: row;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .container {
+    grid: auto-flow dense 100px / 1fr 2fr;
+  }
+  .container {
+    grid-auto-flow: row dense;
+    grid-auto-rows: 100px;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .container {
+    grid: 100px 300px / auto-flow 200px;
+  }
+  .container {
+    grid-template-rows: 100px 300px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+  }
+
+  It also accepts a more complex but quite handy syntax for setting everything at once. You specify grid-template-areas, grid-template-rows and grid-template-columns, and all the other sub-properties are set to their initial values. What you're doing is specifying the line names and track sizes inline with their respective grid areas. This is easiest to describe with an example:
+
+.container {
+    grid: [row1-start] "header header header" 1fr [row1-end]
+          [row2-start] "footer footer footer" 25px [row2-end]
+          / auto 50px auto;
+  }
+  .container {
+    grid-template-areas: 
+      "header header header"
+      "footer footer footer";
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;    
+  }
+
+  /*--------- END of CONTAINER properties -------*/
+
+
+
+    /*------ START of ITEM properties [grid item] ------*/
+
+
+ /*--------- ITEM, explicit placement of items in Grid [start row/col, end row/col, span]-------*/
+Note:
+float, display: inline-block, display: table-cell, vertical-align and column-* properties have no effect on a grid item.
+
+>>>grid-column-start
+>>>grid-column-end
+>>>grid-row-start
+>>>grid-row-end
+
+VALUES:
+>>><line> 
+- can be a number to refer to a numbered grid line, or a name to refer to a named grid line
+>>>span <number> 
+- the item will span across the provided number of grid tracks
+>>>span <name> 
+- the item will span across until it hits the next line with the provided name
+>>>auto 
+- indicates auto-placement, an automatic span, or a default span of one
+
+SHORTHAND: [accepts same values, including span]
+--- see also, grid-area [next] 
+>>>grid-column: start/end;
+>>>grid-row: start/end; 
+
+EXAMPLE:
+.item-c {
+    grid-column: 3 / span 2;
+    grid-row: third-line / 4;
+  }
+
+Determines a grid item's location within the grid by referring to specific grid lines. grid-column-start/grid-row-start is the line where the item begins, and grid-column-end/grid-row-end is the line where the item ends.
+
+If no grid-column-end/grid-row-end is declared, the item will span 1 track by default.
+
+Items can overlap each other. You can use z-index to control their stacking order.
+
+
+ /*--------- ITEM, assign a name OR alternate shorthand for placement]-------*/
+
+ Gives an item a name so that it can be referenced by a template created with the grid-template-areas property. Alternatively, this property can be used as an even shorter shorthand for grid-row-start + grid-column-start + grid-row-end + grid-column-end.
+
+You wouldn't need both, the first if you used grid-template-areas, and the second if you didnt'
+
+ >>>grid-area
+
+ 1) Assign name:
+ .item-d {
+    grid-area: header
+  }
+
+  2) Placement (alternative to grid-column and grid-row)
+  .item-d {
+    grid-area: 1 / col4-start / last-line / 6
+  }
+
+  /*------ Item, same as Container, but individual [overrides grid parent] ------*/
+  /*-----individual cell alignment [content inside cells]-----*/
+  /*------ see also CONTAINER properties = justify|align|place-items ------*/
+ITEM PROPERTY [SINGLE ITEM, class ='grid-item'] (rather than container) overrides justify-items, 
+align-items default, or what may have been specified in the container element
+
+THESE APPLY TO ALL ITEMS, OR INDIVIDUAL ITEMS WITH REGARDS TO PLACEMENT OF WITHIN A GRID CELL
+CONTAINER PROPERTY
+
+>>>justify-self: [same as container, but applies to single item, horizontally]
+>>>align-self: [same as container, but applies to single item, vertically]
+
+SHORTHAND:
+>>>place-self: [sets BOTH align-self (vertical)/ justify-self (horizontal)]
+If only one value is given, it is applied to both
+
+

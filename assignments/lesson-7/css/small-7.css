@@ -1,15 +1,22 @@
 * body, header, footer, main, h1, h2, nav {
   margin: 0 auto;
   padding: 0;
-  max-width: 100%;
+  max-width: 960px;
   box-sizing: border-box;
   font-family: 'Oxygen','Lato', sans-serif;
   text-align: center;
-  font-size: 2vw;
+  font-size: 100%;
 }
 
 main {
-  max-width: 85%;
+  width: 80%;
+  max-width: 960px;
+  min-width: 320px;
+}
+
+section, article {
+  margin: 1.2rem 0 1.2rem 0;
+  padding: .8rem;
 }
 
 header, footer{
@@ -22,30 +29,30 @@ footer {
 
 /*------- Header: Title and Logo -------*/
 
-.logo, .header-title-text {
+.header-logo, .header-textbox {
   display: inline-block;
   vertical-align: middle;
 }
 
-.logo {
+.header-logo {
   width: 14%;
 }
 
-.header-title-text {
+.header-textbox {
   margin-left: 20px;
 }
 
 /*------- Header: Navigation -------*/
 
 nav, .menu {
-  background: rgb(255, 112, 185);
+  background: rgb(56, 112, 185);
   list-style: none;
   text-align: center;
   box-shadow: 5px 10px 18px #888888;
   padding: 0;
 }
 
-.menu a, #footend-copy {
+.menu a, #footer-copy {
   display: block;
   color: white;
   border: 1px solid rgb(27, 10, 27);
@@ -80,7 +87,7 @@ nav, .menu {
   background: rgb(24, 88, 74);
 }
 
-#footend-copy a:link, #footend-copy a:visited {
+#footer-copy a:link, #footer-copy a:visited {
   color: white;
 }
 
@@ -91,13 +98,13 @@ nav, .menu {
 
 
 /*------- Font Adjustments, Styling -------*/
-.title-header {
+.header-title {
   color:  rgb(24, 88, 74);
   font-size: 200%;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 
-.motto {
+.header-subtitle {
   font-style: oblique;
   font-weight: 700;
   color:  rgb(24, 88, 74);
@@ -110,9 +117,8 @@ nav, .menu {
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 
-#title-town, .article-title {
+.section-title, .article-title {
   font-size: 175%;
-  margin: 1.2em 0 .7em 0;
   font-weight: bold;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
@@ -122,7 +128,7 @@ nav, .menu {
   font-size: 115%;
 }
 
- .container-section h2 {
+ .container h2 {
   font-size: 150%;
   text-align: center;
   text-shadow: 3px 3px 2px #0a0909;
@@ -138,13 +144,13 @@ nav, .menu {
   text-align: left;
 }
 
-#footend-copy {
+#footer-copy {
   font-size: 80%;
 }
 
 /*------- Hero Container and Image -------*/
 
-.hero-banner img {
+.img-hero {
   width: 100%;
   height: auto;
   box-shadow: 5px 10px 18px #888888;
@@ -155,9 +161,11 @@ nav, .menu {
 
 .container-hero {
   position: relative;
+  padding-right: 0;
+  padding-left: 0;
  }
 
-.img-overlay form {
+.overlay form {
   position: absolute;
   top: 8vw;
   left: 1.5vw;
@@ -167,12 +175,12 @@ nav, .menu {
 
 }
 
-.img-overlay h3 {
+.overlay h3 {
   margin: 0 0 .8em auto;
   border-bottom: 1px solid #fff;
 }
 
-.img-overlay form label {
+.overlay form label {
   float: left;
   width: 8em;
   margin-right: .8em;
@@ -180,7 +188,7 @@ nav, .menu {
   text-align: right;
 }
 
-.img-overlay form input {
+.overlay form input {
   width: 4.5em;
   background-color: transparent;
   padding-bottom: .5em;
@@ -191,11 +199,9 @@ nav, .menu {
 
 /*------- Forecast -------*/
 
-.container-section {
+.container {
   display: none;
   background-color: rgb(56, 112, 185);
-  margin: 2em 0 .7em 0;
-  padding: .6em;
   box-shadow: 5px 10px 18px #0a0909;
   border-radius: 5px 5px 5px 5px;
   color: #fff;
@@ -228,8 +234,6 @@ nav, .menu {
 article {
   position: relative;
   background-color: rgb(156, 204, 250);
-  margin: 2em 0 8vw 0;
-  padding: .6em;
   box-shadow: 5px 10px 18px #0a0909;
   border-radius: 5px 5px 5px 5px;
 }

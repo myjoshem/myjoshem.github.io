@@ -9,13 +9,13 @@
 
   <link rel="icon" href="images/sunshine.ico" type="image/x-icon" />
 
-  <meta name="Weather and Community Resource Information for Southeastern, Idaho" content="Preston Idaho and surrounding communities of Soda Springs, Fish Haven, weather resources and Information, forecast, community events, photo gallery, storm center, calendar, emergency preparedness, articles, location.">
-  <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
+  <meta name="description" content="Preston Idaho and surrounding communities of Soda Springs, Fish Haven, weather resources and Information, forecast, community events, photo gallery, storm center, calendar, emergency preparedness, articles, location.">
 
+  <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
   <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
   <!-- minimized version of normalize.css from external source -->
 
-  <link href="https://fonts.googleapis.com/css?family=Lato|Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato%7COxygen" rel="stylesheet">
 
   <!-- <link rel="stylesheet" href="css/normalize5.0.0.min.css">
   <! <link rel="stylesheet" href="css/normalize.css"> -->
@@ -26,15 +26,15 @@
 </head>
 <body>
   <header>
-    <img src="images/sunrise.png" alt="logo" class="logo">
-    <div class="header-title-text">
-      <h1 class="title-header">My Wether</h1>
-      <div class="motto">&#x22;Because weather happens...&#x22;
+    <img src="images/sunrise.png" alt="logo" class="header-logo">
+    <div class="header-textbox">
+      <h1 class="header-title">My Wether</h1>
+      <div class="header-subtitle">&#x22;Because weather happens...&#x22;
       </div>
     </div>
     <div class="header-object"></div>
     <nav>
-      <ul class="menu">
+      <ul class="navigation">
         <li><a href="#" title="Menu" onclick="toggleMenu()">&#9776;&nbsp;Menu</a></li>
         <li><a href="#" title="Home">Home</a></li>
         <li><a href="#" title="Preston" class="active">Preston</a></li>
@@ -47,14 +47,14 @@
   </header>
   <main>
     <section class="container-hero">
-      <h1 id="title-town">Preston, ID</h1>
-      <div class="hero-banner">
-        <img src="images/cit230_image_franklin400x194.jpeg" srcset="images/cit230_image_franklin400x194sm.jpg 400w,
+      <h1 class="section-title">Preston, ID</h1>
+      <div class="container-img">
+        <img class="img-hero" src="images/cit230_image_franklin400x194.jpeg" srcset="images/cit230_image_franklin400x194sm.jpg 400w,
                      images/cit230_image_franklin800x388.jpeg 800w,
                      images/cit230_image_franklin1200x582lg.jpg 1200w"
           sizes="85vw" alt="fluffly white clouds and blue skies">
       </div>
-      <div class="img-overlay">
+      <div class="overlay">
         <form action="#">
           <h3>Weather Summary</h3>
           <label for="current-conditions">Currently:</label>
@@ -77,7 +77,7 @@
         </form>
       </div>
     </section>
-    <section class="container-section">
+    <section class="container">
       <h2>5-Day Forecast</h2>
       <div class="forecast">
         <table>
@@ -134,7 +134,7 @@
         </iframe>
       </div>-->
     </div>
-    <p id="footend-copy">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
+    <p id="footer-copy">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
         target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" title="opens text document with attribution information in new tab"
         target="_blank" rel="help">Attributions</a><br><span id="currentdate"></span></p>
   </footer>

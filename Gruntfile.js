@@ -1,23 +1,24 @@
 module.exports = function(grunt) {
+  let num = 9;
 
   grunt.initConfig({
     concat: {
         js: {
-          src: ['assignments/lesson-7/js/currentdate.js', 'assignments/lesson-7/js/hamburger.js', 'assignments/lesson-7/js/windchill.js'],
-          dest: 'assignments/lesson-7/js/build/all.scripts.js'
+          src: ['assignments/lesson-' + num + '/js/currentdate.js', 'assignments/lesson-' + num + '/js/hamburger.js', 'assignments/lesson-' + num + '/js/windchill.js'],
+          dest: 'assignments/lesson-' + num + '/js/build/all.scripts.js'
         },
         css: {
-          src: ['assignments/lesson-7/css/normalize5.0.0.min.css', 'assignments/lesson-7/css/small-7.css', 'assignments/lesson-7/css/medium-7.css', 'assignments/lesson-7/css/large-7.css'],
-          dest: 'assignments/lesson-7/css/build/all.styles.css',
+          src: ['assignments/lesson-' + num + '/css/normalize5.0.0.min.css', 'assignments/lesson-' + num + '/css/small-' + num + '.css', 'assignments/lesson-' + num + '/css/medium-' + num + '.css', 'assignments/lesson-' + num + '/css/large-' + num + '.css'],
+          dest: 'assignments/lesson-' + num + '/css/build/all.styles.css',
       },
     },
     watch: {
       js: {
-        files: ['assignments/lesson-7/js/*.js'],
+        files: ['assignments/lesson-' + num + '/js/*.js'],
         tasks: ['concat:js'],
       },
       css: {
-        files: ['assignments/lesson-7/css/*.css'],
+        files: ['assignments/lesson-' + num + '/css/*.css'],
         tasks: ['concat:css'],
       },
     },

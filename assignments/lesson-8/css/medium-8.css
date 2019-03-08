@@ -1,0 +1,51 @@
+/*--- media queries ---*/
+@media only screen and (max-width: 600px) {
+
+  article.grid-container, footer .grid-container {
+    grid-template-columns: minmax(290px, 1fr);
+  }
+
+  article .image, #map {
+    grid-column: 1;
+    grid-row: 2;
+    margin: .8rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+
+  .navigation {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .navigation li:first-child {
+    display:none;
+  }
+
+  .navigation li {
+    display: inline-block;
+  }
+
+  .navigation a {
+    border-radius: 0 0 0 0;
+    border: none;
+    padding: .8rem;
+    font-size: 100%;
+  }
+
+  .navigation li a {
+    border: none;
+  }
+
+  .container.forecast {
+    display: block;
+
+}
+}
+
+
+/*-- Header: Hamburger Menu --*/
