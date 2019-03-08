@@ -68,6 +68,9 @@ footer {
 }
 
 /*------- Header: Title and Logo -------*/
+#assignment-portal {
+  text-decoration: none;
+}
 
 header {
   display: flex;
