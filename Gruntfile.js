@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
         js: {
-          src: ['assignments/lesson-' + num + '/js/currentdate.js', 'js/navigation.js', 'assignments/lesson-' + num + '/js/hamburger.js', 'assignments/lesson-' + num + '/js/windchill.js'],
+          src: ['assignments/lesson-' + num + '/js/currentdate.js', 'js/navigation.js', 'assignments/lesson-' + num + '/js/hamburger.js', 'assignments/lesson-' + num + '/js/windchill.js', 'assignments/lesson-' + num + '/js/town-data.js'],
           dest: 'assignments/lesson-' + num + '/js/build/all.scripts.js'
         },
         css: {
