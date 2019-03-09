@@ -12,6 +12,15 @@ module.exports = function(grunt) {
           dest: 'assignments/lesson-' + num + '/css/build/all.styles.css',
       },
     },
+    copy: {
+      main: {
+      files: [
+        {expand: true, src: ['assignments/lesson-' + num + '/js/build/all.scripts.js', 'assignments/lesson-' + num + '/css/build/all.styles.css'],
+        dest: 'build/', flatten: true, filter: 'isFile',
+      },
+    ]
+    },
+  },
     watch: {
       js: {
         files: ['assignments/lesson-' + num + '/js/*.js'],
@@ -25,7 +34,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['concat', 'watch']);
+  grunt.registerTask('default', ['concat', 'copy', 'watch',]);
 };
 
