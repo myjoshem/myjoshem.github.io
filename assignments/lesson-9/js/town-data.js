@@ -1,5 +1,4 @@
-/* eslint-env es6 */
-/* eslint linebreak-style: ["error", "windows"] */
+
 
 // these two variables are used to access existing elements in our
 // html we will be adding elements and data to these existing elements
