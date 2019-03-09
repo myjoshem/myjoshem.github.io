@@ -44,8 +44,9 @@ document.getElementById("currentdate").innerHTML = fulldate;
 
 // thanks Bro Blazzard. Modified original code found at: https://codepen.io/blazzard-jason/pen/JNzKpY
 
+/** eslint-disable*/
 function toggleMenu() {
-	document.getElementsByClassName("navigation")[0].classList.toggle("responsive");
+	document.getElementsByClassName('navigation')[0].classList.toggle('responsive');
 }
 // retrieve value from html, use parse function to translate value type
 
