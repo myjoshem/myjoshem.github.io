@@ -90,7 +90,7 @@ function populateTownData(jsonObj) {
 
         if (towns[i].name.toLowerCase().includes(arrayTowns[s].toLowerCase())) {
           let splitName = arrayTowns[s].split(" ");
-          let imgName = splitName[0];
+          let imgName = splitName[0].toLowerCase();
           townPic.setAttribute('src', "images/" + imgName + "300x200.jpg");
           townPic.setAttribute('class', "town-data");
         }
