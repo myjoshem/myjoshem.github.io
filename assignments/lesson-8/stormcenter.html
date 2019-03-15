@@ -5,109 +5,163 @@
     <meta charset="utf-8">
     <meta name="title" content="Weather Gallery">
 
-    <title>Storm Center | My Wether | Preston, ID</title>
+    <title>StormCenter| My Wether | Preston, ID</title>
 
     <link rel="icon" href="image grid-items/sunshine.ico" type="image grid-item/x-icon" />
 
-    <meta name="description" content="Spectacular weather related photos">
+    <meta name="description" content="User storm report form. Enter storm details and warning information to keep our community informed.">
     <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
 
     <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <!-- minimized version of normalize.css from external source -->
 
-    <link href="https://fonts.googleapis.com/css?family=Lato%7COxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto:400,500,500i,700,700i" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="/build/all.styles.css" />
+    <link rel="stylesheet" href="/build/all.styles.css" />
 </head>
 
 <body>
-  <a href="/index.html" title="Assignment Portal" id="assignment-portal"><header>
-    <img src="images/sunrise.png" alt="logo" class="logo">
-    <h1>My Wether<br>
-        <span>&#x22;Because weather happens...&#x22;
-        </span>
-    </h1>
-  </header></a>
-  <nav>
-    <ul class="navigation">
-      <li><a href="" title="Menu" onclick="toggleMenu()">&#9776;&nbsp;Menu</a></li>
-      <li><a href="" title="Home" id="nav-home">Home</a></li>
-      <li><a href="" title="Preston" id="nav-preston">Preston</a></li>
-      <li><a href="" title="Soda Springs" id="nav-soda">Soda Springs</a></li>
-      <li><a href="" title="Fish Haven" id="nav-fish">Fish Haven</a></li>
-      <li><a href="" title="Storm Center" id="nav-storm">Storm Center</a></li>
-      <li><a href="" title="Gallery" id="nav-gallery">Gallery</a></li>
-    </ul>
-</nav>
-
-    <main>
-        <section class="form-container">
-                <h1>Course Proposal Application</h1>
-                <form method="GET" action="thanks.html">
-                    <fieldset>
-                        <legend>
-                            Applicant Information
-                        </legend>
-                        <label class="top">First Name* <input required type="text" name="fname"></label>
-                        <label class="top">Last Name* <input required type="text" name="lname"></label>
-                        <label class="top">Phone <input type="tel" name="phone" placeholder="1235551234"></label>
-                        <label class="top">Email* <input required type="email" name="email" placeholder="anyonesemail@somedomain.com"></label>
-                        <label class="top">Website <input type="url" name="url" placeholder="http://"></label>
-                    </fieldset>
-
-                    <fieldset>
-                            <legend>
-                                Course Information
-                            </legend>
-                            <div>Audience</div>
-                            <label class="sbs"><input type="radio" name="audience" value="beginner"> Beginner</label>
-                            <label class="sbs"><input type="radio" name="audience" value="intermediate"> Intermediate</label>
-                            <label class="sbs"><input type="radio" name="audience" value="advanced"> Advanced</label>
-
-                            <div>Software Needed</div>
-                            <label class="sbs"><input type="checkbox" name="editing" value="yes"> Photo Editing</label>
-                            <label class="sbs"><input type="checkbox" name="code" value="yes"> Coding</label>
-                            <label class="sbs"><input type="checkbox" name="process" value="yes"> Preprocessors</label>
-                            <label class="sbs"><input type="checkbox" name="client" value="yes"> FTP Clients</label>
-                        </fieldset>
-
-                        <fieldset>
-                                <legend>
-                                Funding
-                                </legend>
-                                <label class="top">Anticipated Completion Date<input type="date" name="completeDate" value="beginner"></label>
-                                <label class="top">Course Subject
-                                    <select name="subject">
-                                        <option value="">Please Select <span class="rotate">&dArr;</span></option>
-                                        <option value="software">Software Development</option>
-                                        <option value="creative">Creative Professional</option>
-                                        <option value="info">Information Technology</option>
-                                        <option value="data">Data Professional</option>
-                                        <option value="construction">Construction</option>
-                                        <option value="manufacturing">Manufacturing</option>
-                                        <option value="business">Business Professional</option>
-                                        <option value="security">Cyber security</option>
-                                    </select>
-                                </label>
-                                <label class="top">How Many Authors <input type="number" name="authors"></label>
-                            </fieldset>
-                            <input type="submit" name="audience" value="Propose My Course" class="submitBtn">
+    <a href="/index.html" title="Assignment Portal" id="assignment-portal">
+        <header>
+            <img src="images/sunrise.png" alt="logo" class="logo">
+            <h1>My Wether<br>
+                <span>&#x22;Because weather happens...&#x22;
+                </span>
+            </h1>
+        </header>
+    </a>
+    <nav>
+        <ul class="navigation">
+            <li><a href="" title="Menu" onclick="toggleMenu()">&#9776;&nbsp;Menu</a></li>
+            <li><a href="" title="Home" id="nav-home">Home</a></li>
+            <li><a href="" title="Preston" id="nav-preston">Preston</a></li>
+            <li><a href="" title="Soda Springs" id="nav-soda">Soda Springs</a></li>
+            <li><a href="" title="Fish Haven" id="nav-fish">Fish Haven</a></li>
+            <li><a href="" title="Storm Center" id="nav-storm">Storm Center</a></li>
+            <li><a href="" title="Gallery" id="nav-gallery">Gallery</a></li>
+        </ul>
+    </nav>
 
 
+    <main class="storm">
+        <h1>StormCenter Report</h1>
+
+        <div class="container form">
+            <form class="storm" method="GET" action="thanks.html">
+                <fieldset>
+                    <legend>
+                        Storm Reported By
+                    </legend>
+                    <label for="name" class="label-top">
+                        Full Name*
+                        <input required type="text" name="name" id="name" placeholder="Seymour Somebody" title="Please enter your first and last name"
+                            pattern="^[a-zA-ZÀ-ž\-']{2,25}(\s[a-zA-ZÀ-ž\-']{1,25}.\s[a-zA-ZÀ-ž\-']{2,25}|\s[a-zA-ZÀ-ž\-']{2,25})$"
+                            autocomplete="name" />
+                    </label>
+                    <label for="email" class="label-top">Email* <input type="email" id="email" name="email" placeholder="name@example.com"
+                            title="Please enter a valid email" autocomplete="email"></label>
+                    <label for="phone" class="label-top">
+                        Phone Number*
+                        <input required type="tel" name="phone" id="phone" placeholder="1235554567" title="Please enter your phone number"
+                            autocomplete="tel" />
+                    </label>
+                    <label for="zip-code" class="label-top">
+                        ZIP Code*
+                        <input required type="text" name="zip-code" id="zip-code" placeholder="01234 or 12345-0123"
+                            title="Please enter your zip code or postal code" autocomplete="postal-code" />
+                    </label>
+                </fieldset>
 
 
+                <fieldset>
+                    <legend>
+                        Storm Details
+                    </legend>
+                    <label for="date" class="label-top">
+                        Date of Storm*
+                        <input required type="date" name="date" id="date" placeholder="" title="Please select the date of storm event"
+                            autocomplete="date" />
+                    </label>
+                    <label for="storm-type" class="label-top" title="Type your response into the field. Suggestions will appear as you type. For example, if you enter th, it will suggest Thunderstorm. If you just type one letter, it will show all options that contain that letter. The list is not exhaustive, enter the most applicable term.">
+                        What type of storm are you reporting?
+                        <input required type="list" list="storm-choices" name="storm-type" id="storm-type" title="Type your response into the field. Suggestions will appear as you type. For example, if you enter th, it will suggest Thunderstorm. If you just type one letter, it will show all options that contain that letter. The list is not exhaustive, enter the most applicable term."
+                            placeholder="double-click for suggestions..." />
+                        <datalist id="storm-choices">
+                            <option value="Blizzard"></option>
+                            <option value="Flash Flood"></option>
+                            <option value="Hail"></option>
+                            <option value="Hurricane"></option>
+                            <option value="Thunderstorm"></option>
+                            <option value="Tornado"></option>
+                            <option value="Tsunami"></option>
+                        </datalist>
+                    </label>
+
+                    <label class="label-top">Storm Region
+                        <select name="subject">
+                            <option value="" selected disabled>Select Region... &dArr;</option>
+                            <option value="preston">Preston</option>
+                            <option value="soda-springs">Soda Springs</option>
+                            <option value="fish-haven">Fish Haven</option>
+                        </select>
+                    </label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>User In-Danger<em> (Choose one)</em></legend>
+                    <div><label class="radio storm" for="yes">
+                            <input type="radio" id="yes" name="danger-level" value="yes" checked>
+                            Yes</label>
+                    </div>
+                    <div><label class="radio storm" for="maybe">
+                            <input type="radio" id="maybe" name="danger-level" value="maybe">
+                            Maybe</label>
+                    </div>
+                    <div><label class="radio storm" for="no">
+                            <input type="radio" id="no" name="danger-level" value="no">
+                            No</label>
+                    </div>
+                </fieldset>
 
 
-                </form>
-
-        </section>
-        </main>
-
-        <footer>
-            <div class="grid-container">
-                <address class="grid-item contact">
-                  <pre>
+                <fieldset>
+                    <legend>Storm Severity Rating<em> (adjust slider)</em></legend>
+                    <label class="label-left" for="rating">Rating (1 to 10):
+                        <input class="slider" type="range" id="rating" name="rating" list="tickmarks" min="1" max="10"
+                            step="1" oninput="adjustRating(this.value)" onchange="adjustRating(this.value)">
+                        <span id="ratingvalue">5</span>
+                    </label>
+                    <datalist class="slider" id="tickmarks">
+                        <option value="1" label="1"></option>
+                        <option value="2" label="2"></option>
+                        <option value="3" label="3"></option>
+                        <option value="4" label="4"></option>
+                        <option value="5" label="5"></option>
+                        <option value="6" label="6"></option>
+                        <option value="7" label="7"></option>
+                        <option value="8" label="8"></option>
+                        <option value="9" label="9"></option>
+                        <option value="10" label="10"></option>
+                    </datalist>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Details <em>(optional)</em></legend>
+                    <div>
+                        <label class="label-top" for="textarea">
+                            <textarea type="textarea" id="textarea" placeholder="Enter any additional details in this area..."
+                                rows="4" cols="50"></textarea>
+                        </label>
+                    </div>
+                </fieldset>
+                <input type="submit" name="storm-report" value="Complete Your Report" class="submitBtn">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="grid-container">
+            <address class="grid-item contact">
+                <pre>
                     name of company
                     address of company
                     city, state, zip
@@ -116,24 +170,24 @@
                     website
                     email informato
                   </pre>
-                </address>
+            </address>
 
-              <!-- <div class="resp-container-iframe"> -->
-              <img id="map" class="grid-item map" src="images/map-preston400x234.PNG" alt="map of Preston, Idaho">
-              <!--         <iframe class="resp-iframe" id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189463.07935818416!2d-111.880325!3d42.099747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f78c7cda6c31%3A0xf1b3b4fc465a4a3f!2sPreston%2C+ID+83263!5e0!3m2!1sen!2sus!4v1550281773667"
-                  frameborder="0" allowfullscreen> the map was a data hog, I have an api key, but I could not get that to work either
-                </iframe>
-              </div>-->
-            </div>
+            <!-- <div class="resp-container-iframe"> -->
+            <img id="map" class="grid-item map" src="images/map-preston400x234.PNG" alt="map of Preston, Idaho">
+        </div>
 
-            <p class="copyright">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
+        <p class="copyright">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
                 target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" title="opens text document with attribution information in new tab"
                 target="_blank" rel="help">Attributions</a><br><span id="currentdate"></span></p>
+    </footer>
 
-          </footer>
+    <script src="/build/all.scripts.js"></script>
+    <script>
+        function adjustRating(rating) {
+            document.getElementById("ratingvalue").innerHTML = rating;
+        }
 
-          <script src="/build/all.scripts.js"></script>
+    </script>
 </body>
 
 </html>
-

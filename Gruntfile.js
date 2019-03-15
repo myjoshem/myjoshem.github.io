@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  const num = 9;
+ let num = 9;
 
   grunt.initConfig({
     concat: {
@@ -24,11 +24,11 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['assignments/lesson-' + num + '/js/*.js'],
-        tasks: ['concat:js'],
+        tasks: ['concat:js', 'copy:main'],
       },
       css: {
         files: ['assignments/lesson-' + num + '/css/*.css'],
-        tasks: ['concat:css'],
+        tasks: ['concat:css', 'copy:main'],
       },
     },
   });

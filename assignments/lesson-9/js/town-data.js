@@ -56,14 +56,44 @@ function populateTownData(jsonObj) {
         let townName = document.createElement('h1');
         let townMotto = document.createElement('p');
         let townFounded = document.createElement('p');
+        let townFoundedLabel = document.createElement('span');
         let townPopulation = document.createElement('p');
+        let townPopulationLabel = document.createElement('span');
         let townRainfall = document.createElement('p');
+        let townRainfallLabel = document.createElement('span');
         let townPic = document.createElement('img');
         townName.textContent = towns[i].name;
         townMotto.textContent = towns[i].motto;
-        townFounded.textContent = 'Year Founded: ' + towns[i].yearFounded;
-        townPopulation.textContent = 'Population: ' + towns[i].currentPopulation;
-        townRainfall.textContent = 'Annual Rain Fall: ' + towns[i].averageRainfall;
+        townFounded.textContent = towns[i].yearFounded;
+        townFoundedLabel.textContent = 'Year Founded: ';
+        let population = towns[i].currentPopulation.toLocaleString('en');
+        townPopulation.textContent = population;
+        townPopulationLabel.textContent = 'Population: ';
+        townRainfall.textContent =towns[i].averageRainfall;
+        townRainfallLabel.textContent = 'Annual Rain Fall: ';
+
+
+    /*     if (towns[i].motto.includes("\. ") {
+          let splitMotto = towns[i].split(".");
+          let newMotto = splitMotto[0] + '<br>';
+          for (let m = 1; m < splitMotto.length; m++); {
+            if (m == splitMotto.length - 1) {
+            newMotto += splitMotto[m];
+            }
+            else {
+              newMotto += splitMotto[m] + '<br>';
+            }
+          }
+          townMotto.textContent = newMotto;
+        } */
+
+
+        if (towns[i].name.toLowerCase().includes(arrayTowns[s].toLowerCase())) {
+          let splitName = arrayTowns[s].split(" ");
+          let imgName = splitName[0];
+          townPic.setAttribute('src', "images/" + imgName + "300x200.jpg");
+          townPic.setAttribute('class', "town-data");
+        }
 
         // now that we have created our new elements and filled with
         // data, let's add them to the html. We first add new children
@@ -73,8 +103,12 @@ function populateTownData(jsonObj) {
         townContainer.appendChild(townName);
         townContainer.appendChild(townMotto);
         townContainer.appendChild(townFounded);
+        townFounded.prepend(townFoundedLabel);
         townContainer.appendChild(townPopulation);
+        townPopulation.prepend(townPopulationLabel);
         townContainer.appendChild(townRainfall);
+        townRainfall.prepend(townRainfallLabel);
+        townContainer.appendChild(townPic);
 
         // at the beginning of our script, we accessed the existing
         // section in our html using the query selector, here we add
