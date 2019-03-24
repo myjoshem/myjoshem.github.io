@@ -15,7 +15,8 @@
    "workbench.tree.horizontalScrolling": true,
    "workbench.editor.openPositioning": "last",
    "emmet.triggerExpansionOnTab": true,
-   "checkpoints.showActiveFileOnly": true
+   "checkpoints.showActiveFileOnly": true,
+   "liveServer.settings.multiRootWorkspaceName": "myjoshem.github.io-1"
 }
 
  

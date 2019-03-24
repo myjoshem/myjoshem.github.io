@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="title" content="Weather and Community Resource Information for Southeastern, Idaho">
+
+  <title>My Wether | Today's weather and resources | Preston, ID</title>
+
+  <link rel="icon" href="images/sunshine.ico" type="image/x-icon" />
+
+  <meta name="description" content="Preston Idaho and surrounding communities of Soda Springs, Fish Haven, weather resources and Information, forecast, community events, photo gallery, storm center, calendar, emergency preparedness, articles, location.">
+  <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+  <!-- minimized version of normalize.css from external source -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto:400,500,500i,700,700i" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/build/all.styles.css" />
+</head>
+<body>
+  <a href="/index.html" title="Assignment Portal" id="assignment-portal"><header>
+    <img src="images/sunrise.png" alt="logo" class="logo">
+    <h1>My Wether<br>
+        <span>&#x22;Because weather happens...&#x22;
+        </span>
+    </h1>
+  </header></a>
+  <nav>
+    <ul class="navigation">
+      <li><a href="#" title="Menu" onclick="toggleMenu()">&#9776;&nbsp;Menu</a></li>
+      <li><a href="index.html" title="Home" id="nav-home">Home</a></li>
+      <li><a href="preston.html" title="Preston" id="nav-preston" class='active'>Preston</a></li>
+      <li><a href="sodasprings.html" title="Soda Springs" id="nav-soda">Soda Springs</a></li>
+      <li><a href="fishhaven.html" title="Fish Haven" id="nav-fish">Fish Haven</a></li>
+      <li><a href="stormcenter.html" title="Storm Center" id="nav-storm">Storm Center</a></li>
+      <li><a href="gallery.html" title="Gallery" id="nav-gallery">Gallery</a></li>
+    </ul>
+</nav>
+
+  <main>
+      <h1 class="title">Preston, ID</h1>
+    <section class="grid-container">
+        <div class="grid-item overlay">
+            <form action="#">
+              <h3>Weather Summary</h3>
+              <label for="current-conditions">Currently:</label>
+              <input type="text" id="current-conditions" value="Sunny"><br>
+
+              <label for="current-temp">Temperature:</label>
+              <input type="number" id="tempf" value="65"><span>&#8457;</span><br>
+
+              <label for="windchill">Wind Chill:</label>
+              <input type="number" id="windchill" value=""><span>mph</span><br>
+
+              <label for="humidity">Humidity:</label>
+              <input type="number" id="humidity" value="12"><span>&#37;</span><br>
+
+              <label for="precipitation">Precipitation:</label>
+              <input type="number" id="precipitation" value="0"><span>inches</span><br>
+
+              <label for="wind-speed">Wind Speed:</label>
+              <input type="number" id="windspeed" value="15"><span> mph</span><br>
+            </form>
+          </div>
+      <div class="grid-item image">
+        <img class="hero" src="images/preston300x200.jpg" alt="fluffly white clouds and blue skies">
+        </div>
+
+    </section>
+    <section class="container forecast">
+
+          <h2>5-Day Forecast</h2>
+        <table>
+          <tr>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+          <tr>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+            <td>70&#8457;</td>
+          </tr>
+        </table>
+
+    </section>
+    <article class="grid-container">
+      <div class="grid-item">
+      <h2 class="article-title">Classes Canceled Due to Weather</h2>
+      <h3 class="article-subtitle">By NECIA P. SEAMONS Citizen editor </h3>
+      <p class="article-body">Both the Preston School District and West Side School District will be closed tomorrow,
+        Feb. 14, due to the weather and the amount of snow that has fallen today. At least eight inches of heavy wet
+        snow has fallen on the valley floor. Much more has fallen in the higher elevations. Find the rest of the story<a href="https://www.hjnews.com/preston/news/both-school-districts-cancel-classes-tomorrow-due-to-the-weather/article_b81f75aa-3006-11e9-b52c-3b0573f53fa6.html"
+          target="_blank" rel="external site for The Preston Citizen newspaper"><span> here.</span></a>
+      </p>
+    </div>
+      <img class="grid-item image" src="images/prestonschoolsclosedweather.imagesm.jpg" srcset="images/prestonschoolsclosedweather.imagesm.jpg 400w,
+                   images/prestonschoolsclosedweather.image.jpg 800w"
+        sizes="85vw" alt="snow plow working to clear Preston's roads">
+    </article>
+  </main>
+  <footer>
+    <div class="grid-container">
+        <address class="grid-item contact">
+          <pre>
+            The Wether Company
+            9000 Main St.
+            Preston, ID 12546
+            555-212-1515;
+            669-859-5212
+            website
+            email informato
+          </pre>
+        </address>
+        <div>
+          <iframe class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2649.7265390368216!2d-111.88038046218328!3d42.096648779380146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f7eb6e6de7d1%3A0x1c5be534f2217780!2sPreston+City+Clerk!5e0!3m2!1sen!2sus!4v1550289337247"
+          width="400" height="300" style="border:0" allowfullscreen>
+        </iframe>
+      </div>
+  </div>
+
+    </div>
+
+    <p class="copyright">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
+        target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" title="opens text document with attribution information in new tab"
+        target="_blank" rel="help">Attributions</a><br><span id="currentdate"></span></p>
+
+  </footer>
+
+  <script src="/build/all.scripts.js"></script>
+</body>
+
+</html>

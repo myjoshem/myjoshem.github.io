@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="title" content="Weather and Community Resource Information for Southeastern, Idaho">
+
+  <title>Home | My Wether</title>
+
+  <link rel="icon" href="images/sunshine.ico" type="image/x-icon" />
+
+  <meta name="description" content="Preston Idaho and surrounding communities of Soda Springs, Fish Haven, weather resources and Information, forecast, community events, photo gallery, storm center, calendar, emergency preparedness, articles, location.">
+  <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag for viewport recommendations -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+  <!-- minimized version of normalize.css from external source -->
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Roboto:400,500,500i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="/build/all.styles.css"/>
+</head>
+<body>
+  <a href="/index.html" title="Assignment Portal" id="assignment-portal">
+    <header>
+      <img src="images/sunrise.png" alt="logo" class="logo">
+      <h1>My Wether<br>
+        <span>&#x22;Because weather happens...&#x22;
+        </span>
+    </h1>
+  </header></a>
+  <nav>
+      <ul class="navigation">
+    <li><a href="#" title="Menu" onclick="toggleMenu()">&#9776;&nbsp;Menu</a></li>
+    <li><a href="index.html" title="Home" id="nav-home" class="active">Home</a></li>
+    <li><a href="preston.html" title="Preston" id="nav-preston">Preston</a></li>
+    <li><a href="sodasprings.html" title="Soda Springs" id="nav-soda">Soda Springs</a></li>
+    <li><a href="fishhaven.html" title="Fish Haven" id="nav-fish">Fish Haven</a></li>
+    <li><a href="stormcenter.html" title="Storm Center" id="nav-storm">Storm Center</a></li>
+    <li><a href="gallery.html" title="Gallery" id="nav-gallery">Gallery</a></li>
+  </ul>
+</nav>
+
+  <main>
+    <section class="grid-container town-data">
+
+    </section>
+
+
+    </main>
+    <footer>
+      <div class="grid-container">
+          <address class="grid-item contact">
+            <pre>
+              name of company
+              address of company
+              city, state, zip
+              phone
+              fax number
+              website
+              email informato
+            </pre>
+          </address>
+
+        <img id="map" class="grid-item map" src="images/map-preston400x234.PNG" alt="map of Preston, Idaho">
+
+      </div>
+
+      <p class="copyright">&copy; 2019 | Michelle J. Markham | <a href="https://www.byui.edu" title="opens BYU Website in new tab"
+          target="_blank" rel="help">BYU-Idaho</a> | <a href="/images/attribution.txt" title="opens text document with attribution information in new tab"
+          target="_blank" rel="help">Attributions</a><br><span id="currentdate"></span></p>
+
+    </footer>
+    <script src="js/town-data.js"></script>
+    <script src="/build/all.scripts.js"></script>
+
+</body>
+
+</html>

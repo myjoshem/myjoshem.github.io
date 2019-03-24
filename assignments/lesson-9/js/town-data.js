@@ -124,3 +124,54 @@ function populateTownData(jsonObj) {
 // populate images townPic.setAttribute('src,'filepath + variable name
 // for town.jpg) use source to pic right size, but use naming
 // convention for images matched to each town
+
+fish haven sunny 24f, Montpelier 23 clear
+{
+  "id": 5585000,
+  "name": "Bear Lake County",
+  "country": "US",
+  "coord": {
+    "lon": -111.313538,
+    "lat": 42.312431
+  }
+  {
+    "id": 5585010,
+    "name": "Bear Lake Sands",
+    "country": "US",
+    "coord": {
+      "lon": -111.253532,
+      "lat": 42.051601
+    }
+     {
+    "id": 5601299,
+    "name": "Montpelier",
+    "country": "US",
+    "coord": {
+      "lon": -111.297699,
+      "lat": 42.322151
+    }
+
+  {
+    "id": 5603240,
+    "name": "Paris",
+    "country": "US",
+    "coord": {
+      "lon": -111.401039,
+      "lat": 42.22715
+    }
+      {
+    "id": 5604473,
+    "name": "Preston",
+    "country": "US",
+    "coord": {
+      "lon": -111.876617,
+      "lat": 42.09631
+    }
+      {
+    "id": 5607916,
+    "name": "Soda Springs",
+    "country": "US",
+    "coord": {
+      "lon": -111.604668,
+      "lat": 42.654369
+    }
